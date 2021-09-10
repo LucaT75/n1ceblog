@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "articles",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "artcilesPerRow",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [],
+  "service": "no",
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "BlogCategory",
+  "changelogDate": "20210908231859"
+}

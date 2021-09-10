@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="blogCategory">
+      <h2 data-cy="blogCategoryDetailsHeading"><span jhiTranslate="n1CeblogApp.blogCategory.detail.title">Blog Category</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ blogCategory.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogCategory.title">Title</span></dt>
+        <dd>
+          <span>{{ blogCategory.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogCategory.articles">Articles</span></dt>
+        <dd>
+          <span>{{ blogCategory.articles }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogCategory.artcilesPerRow">Artciles Per Row</span></dt>
+        <dd>
+          <span>{{ blogCategory.artcilesPerRow }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/blog-category', blogCategory.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

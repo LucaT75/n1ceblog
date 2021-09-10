@@ -1,0 +1,1 @@
+java -jar n1ceblog-0.0.1-SNAPSHOT.jar --spring.data.mongodb.uri=mongodb://localhost:27017 --spring.data.mongodb.database=n1ceblog

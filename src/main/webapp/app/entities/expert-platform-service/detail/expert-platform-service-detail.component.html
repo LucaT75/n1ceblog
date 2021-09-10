@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="expertPlatformService">
+      <h2 data-cy="expertPlatformServiceDetailsHeading">
+        <span jhiTranslate="n1CeblogApp.expertPlatformService.detail.title">Expert Platform Service</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.title">Title</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.content">Content</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.content }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.expertId">Expert Id</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.expertId }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.featuredImg">Featured Img</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.featuredImg }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.category">Category</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.category }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.startingPrice">Starting Price</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.startingPrice }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expertPlatformService.publishingTime">Publishing Time</span></dt>
+        <dd>
+          <span>{{ expertPlatformService.publishingTime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/expert-platform-service', expertPlatformService.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

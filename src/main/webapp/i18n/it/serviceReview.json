@@ -1,0 +1,28 @@
+{
+  "n1CeblogApp": {
+    "serviceReview": {
+      "home": {
+        "title": "ServiceReviews",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Service Review",
+        "createOrEditLabel": "Genera o modifica un Service Review",
+        "notFound": "No Service Reviews found"
+      },
+      "created": "&Egrave; stato generato un nuovo Service Review con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Service Review identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Service Review con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Service Review {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Review"
+      },
+      "id": "ID",
+      "serviceId": "Service Id",
+      "userId": "User Id",
+      "rating": "Rating",
+      "comment": "Comment",
+      "publishingTime": "Publishing Time"
+    }
+  }
+}

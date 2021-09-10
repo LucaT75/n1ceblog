@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="blogPost">
+      <h2 data-cy="blogPostDetailsHeading"><span jhiTranslate="n1CeblogApp.blogPost.detail.title">Blog Post</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ blogPost.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.title">Title</span></dt>
+        <dd>
+          <span>{{ blogPost.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.content">Content</span></dt>
+        <dd>
+          <span>{{ blogPost.content }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.snippet">Snippet</span></dt>
+        <dd>
+          <span>{{ blogPost.snippet }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.expertId">Expert Id</span></dt>
+        <dd>
+          <span>{{ blogPost.expertId }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.featuredImg">Featured Img</span></dt>
+        <dd>
+          <span>{{ blogPost.featuredImg }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.category">Category</span></dt>
+        <dd>
+          <span>{{ blogPost.category }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.blogPost.publishingTime">Publishing Time</span></dt>
+        <dd>
+          <span>{{ blogPost.publishingTime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/blog-post', blogPost.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

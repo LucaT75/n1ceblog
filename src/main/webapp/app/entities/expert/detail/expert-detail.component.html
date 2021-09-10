@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="expert">
+      <h2 data-cy="expertDetailsHeading"><span jhiTranslate="n1CeblogApp.expert.detail.title">Expert</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ expert.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.shortBio">Short Bio</span></dt>
+        <dd>
+          <span>{{ expert.shortBio }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.expertise">Expertise</span></dt>
+        <dd>
+          <span>{{ expert.expertise }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.rating">Rating</span></dt>
+        <dd>
+          <span>{{ expert.rating }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.reviews">Reviews</span></dt>
+        <dd>
+          <span>{{ expert.reviews }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.candidatureVotes">Candidature Votes</span></dt>
+        <dd>
+          <span>{{ expert.candidatureVotes }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.candidatureEndTime">Candidature End Time</span></dt>
+        <dd>
+          <span>{{ expert.candidatureEndTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="n1CeblogApp.expert.candidatureStakedAmount">Candidature Staked Amount</span></dt>
+        <dd>
+          <span>{{ expert.candidatureStakedAmount }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/expert', expert.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

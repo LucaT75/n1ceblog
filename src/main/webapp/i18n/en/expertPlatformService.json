@@ -1,0 +1,30 @@
+{
+  "n1CeblogApp": {
+    "expertPlatformService": {
+      "home": {
+        "title": "Expert Platform Services",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Expert Platform Service",
+        "createOrEditLabel": "Create or edit a Expert Platform Service",
+        "notFound": "No Expert Platform Services found"
+      },
+      "created": "A new Expert Platform Service is created with identifier {{ param }}",
+      "updated": "A Expert Platform Service is updated with identifier {{ param }}",
+      "deleted": "A Expert Platform Service is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Expert Platform Service {{ id }}?"
+      },
+      "detail": {
+        "title": "Expert Platform Service"
+      },
+      "id": "ID",
+      "title": "Title",
+      "content": "Content",
+      "expertId": "Expert Id",
+      "featuredImg": "Featured Img",
+      "category": "Category",
+      "startingPrice": "Starting Price",
+      "publishingTime": "Publishing Time"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-expert-heading" data-cy="ExpertCreateUpdateHeading" jhiTranslate="n1CeblogApp.expert.home.createOrEditLabel">
+        Create or edit a Expert
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.shortBio" for="field_shortBio">Short Bio</label>
+          <input type="text" class="form-control" name="shortBio" id="field_shortBio" data-cy="shortBio" formControlName="shortBio" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.expertise" for="field_expertise">Expertise</label>
+          <input type="text" class="form-control" name="expertise" id="field_expertise" data-cy="expertise" formControlName="expertise" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.rating" for="field_rating">Rating</label>
+          <input type="number" class="form-control" name="rating" id="field_rating" data-cy="rating" formControlName="rating" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.reviews" for="field_reviews">Reviews</label>
+          <input type="number" class="form-control" name="reviews" id="field_reviews" data-cy="reviews" formControlName="reviews" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.candidatureVotes" for="field_candidatureVotes"
+            >Candidature Votes</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="candidatureVotes"
+            id="field_candidatureVotes"
+            data-cy="candidatureVotes"
+            formControlName="candidatureVotes"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.candidatureEndTime" for="field_candidatureEndTime"
+            >Candidature End Time</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="candidatureEndTime"
+            id="field_candidatureEndTime"
+            data-cy="candidatureEndTime"
+            formControlName="candidatureEndTime"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="n1CeblogApp.expert.candidatureStakedAmount" for="field_candidatureStakedAmount"
+            >Candidature Staked Amount</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="candidatureStakedAmount"
+            id="field_candidatureStakedAmount"
+            data-cy="candidatureStakedAmount"
+            formControlName="candidatureStakedAmount"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

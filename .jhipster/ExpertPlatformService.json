@@ -1,0 +1,38 @@
+{
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "expertId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "featuredImg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startingPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "publishingTime",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "service": "no",
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "ExpertPlatformService",
+  "changelogDate": "20210908233414"
+}

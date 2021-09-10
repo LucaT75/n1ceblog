@@ -1,0 +1,30 @@
+{
+  "n1CeblogApp": {
+    "expert": {
+      "home": {
+        "title": "Experts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Expert",
+        "createOrEditLabel": "Genera o modifica un Expert",
+        "notFound": "No Experts found"
+      },
+      "created": "&Egrave; stato generato un nuovo Expert con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Expert identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Expert con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Expert {{ id }}?"
+      },
+      "detail": {
+        "title": "Expert"
+      },
+      "id": "ID",
+      "shortBio": "Short Bio",
+      "expertise": "Expertise",
+      "rating": "Rating",
+      "reviews": "Reviews",
+      "candidatureVotes": "Candidature Votes",
+      "candidatureEndTime": "Candidature End Time",
+      "candidatureStakedAmount": "Candidature Staked Amount"
+    }
+  }
+}

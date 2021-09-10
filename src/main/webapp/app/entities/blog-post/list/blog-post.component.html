@@ -1,0 +1,122 @@
+<div>
+  <h2 id="page-heading" data-cy="BlogPostHeading">
+    <span jhiTranslate="n1CeblogApp.blogPost.home.title">Blog Posts</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="n1CeblogApp.blogPost.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-blog-post"
+        [routerLink]="['/blog-post/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="n1CeblogApp.blogPost.home.createLabel"> Create a new Blog Post </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="blogPosts?.length === 0">
+    <span jhiTranslate="n1CeblogApp.blogPost.home.notFound">No blogPosts found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="blogPosts && blogPosts.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="title">
+            <span jhiTranslate="n1CeblogApp.blogPost.title">Title</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="content">
+            <span jhiTranslate="n1CeblogApp.blogPost.content">Content</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="snippet">
+            <span jhiTranslate="n1CeblogApp.blogPost.snippet">Snippet</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="expertId">
+            <span jhiTranslate="n1CeblogApp.blogPost.expertId">Expert Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="featuredImg">
+            <span jhiTranslate="n1CeblogApp.blogPost.featuredImg">Featured Img</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="category">
+            <span jhiTranslate="n1CeblogApp.blogPost.category">Category</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="publishingTime">
+            <span jhiTranslate="n1CeblogApp.blogPost.publishingTime">Publishing Time</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let blogPost of blogPosts; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/blog-post', blogPost.id, 'view']">{{ blogPost.id }}</a>
+          </td>
+          <td>{{ blogPost.title }}</td>
+          <td>{{ blogPost.content }}</td>
+          <td>{{ blogPost.snippet }}</td>
+          <td>{{ blogPost.expertId }}</td>
+          <td>{{ blogPost.featuredImg }}</td>
+          <td>{{ blogPost.category }}</td>
+          <td>{{ blogPost.publishingTime }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/blog-post', blogPost.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/blog-post', blogPost.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(blogPost)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="blogPosts && blogPosts.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

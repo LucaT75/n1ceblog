@@ -1,0 +1,38 @@
+{
+  "fields": [
+    {
+      "fieldName": "shortBio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "expertise",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "reviews",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "candidatureVotes",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "candidatureEndTime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "candidatureStakedAmount",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "service": "no",
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "Expert",
+  "changelogDate": "20210908232712"
+}

@@ -1,0 +1,30 @@
+{
+  "n1CeblogApp": {
+    "blogPost": {
+      "home": {
+        "title": "BlogPosts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Blog Post",
+        "createOrEditLabel": "Genera o modifica un Blog Post",
+        "notFound": "No Blog Posts found"
+      },
+      "created": "&Egrave; stato generato un nuovo Blog Post con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Blog Post identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Blog Post con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Blog Post {{ id }}?"
+      },
+      "detail": {
+        "title": "Blog Post"
+      },
+      "id": "ID",
+      "title": "Title",
+      "content": "Content",
+      "snippet": "Snippet",
+      "expertId": "Expert Id",
+      "featuredImg": "Featured Img",
+      "category": "Category",
+      "publishingTime": "Publishing Time"
+    }
+  }
+}
